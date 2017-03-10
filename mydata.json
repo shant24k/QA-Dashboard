@@ -1,0 +1,497 @@
+{
+  "productDetails": [
+    {
+      "productId": "M000",
+      "productType": "Mobile",
+      "productName": "OnePlus 3",
+      "brand": "OnePlus",
+      "price": "30000"
+    },
+    {
+      "productId": "M001",
+      "productType": "Mobile",
+      "productName": "iPhone 7",
+      "brand": "Apple",
+      "price": "60000"
+    },
+    {
+      "productId": "M002",
+      "productType": "Mobile",
+      "productName": "iPhone 7+",
+      "brand": "Apple",
+      "price": "80000"
+    },
+    {
+      "productId": "M003",
+      "productType": "Mobile",
+      "productName": "Pixel",
+      "brand": "Google",
+      "price": "65000"
+    },
+    {
+      "productId": "T001",
+      "productType": "Tablet",
+      "productName": "iPad Air2",
+      "brand": "Apple",
+      "price": "50000"
+    },
+    {
+      "productId": "T002",
+      "productType": "Tablet",
+      "productName": "ipadMini 4",
+      "brand": "Apple",
+      "price": "32000"
+    },
+    {
+      "productId": "L001",
+      "productType": "Laptop",
+      "productName": "Macbook Pro",
+      "brand": "Apple",
+      "price": "110000"
+    },
+    {
+      "productId": "L002",
+      "productType": "Laptop",
+      "productName": "Inspiron15R",
+      "brand": "Dell",
+      "price": "55000"
+    }
+  ],
+  "categoryDetails": [
+    {
+      "categoryId": "MOB000",
+      "categoryName": "OnePlus 3"
+    },
+    {
+      "categoryId": "MOB001",
+      "categoryName": "iPhone 7"
+    },
+    {
+      "categoryId": "MOB002",
+      "categoryName": "iPhone 7+"
+    },
+    {
+      "categoryId": "MOB003",
+      "categoryName": "Pixel"
+    },
+    {
+      "categoryId": "TAB001",
+      "categoryName": "iPad Air2"
+    },
+    {
+      "categoryId": "TAB002",
+      "categoryName": "ipadMini 4"
+    },
+    {
+      "categoryId": "LT001",
+      "categoryName": "Macbook Pro"
+    },
+    {
+      "categoryId": "LT002",
+      "categoryName": "Inspiron15R"
+    }
+  ],
+  "brandsDetails": [
+    {
+      "brandName": "OnePlus",
+      "brandItem": "Mobile",
+      "brandDetails": "OnePlus 3"
+    },
+    {
+      "brandName": "Apple",
+      "brandItem": "Mobile",
+      "brandDetails": "iPhone 7"
+    },
+    {
+      "brandName": "Google",
+      "brandItem": "Mobile",
+      "brandDetails": "iPhone 7+"
+    },
+    {
+      "brandName": "Samsung",
+      "brandItem": "Mobile",
+      "brandDetails": "Pixel"
+    },
+    {
+      "brandName": "Apple",
+      "brandItem": "Tablet",
+      "brandDetails": "iPad Air2"
+    }
+  ],
+  "recentPurchases": [
+    {
+      "productId": "M000",
+      "price": "30000",
+      "details": "#/recentpurchases/0"
+    },
+    {
+      "productId": "M001",
+      "price": "60000",
+      "details": "#/recentpurchases/1"
+    },
+    {
+      "productId": "M002",
+      "price": "80000",
+      "details": "#/recentpurchases/2"
+    },
+    {
+      "productId": "M003",
+      "price": "65000",
+      "details": "#/recentpurchases/3"
+    },
+    {
+      "productId": "T001",
+      "price": "50000",
+      "details": "#/recentpurchases/4"
+    },
+    {
+      "productId": "T002",
+      "price": "32000",
+      "details": "#/recentpurchases/5"
+    },
+    {
+      "productId": "L001",
+      "price": "110000",
+      "details": "#/recentpurchases/6"
+    },
+    {
+      "productId": "L002",
+      "price": "55000",
+      "details": "#/recentpurchases/7"
+    }
+  ],
+  "purchaseDetails": [
+    {
+      "id": 1,
+      "productId": "M000",
+      "productName": "OnePlus3",
+      "price": "30000",
+      "details": [
+        {
+          "purchaseId": "M000101",
+          "productName": "OnePlus3",
+          "quantity": "4",
+          "buyerName": "abc1",
+          "price": "120000"
+        },
+        {
+          "purchaseId": "M000102",
+          "productName": "OnePlus3",
+          "quantity": "1",
+          "buyerName": "abc2",
+          "price": "30000"
+        },
+        {
+          "purchaseId": "M000103",
+          "productName": "OnePlus3",
+          "quantity": "2",
+          "buyerName": "abc3",
+          "price": "60000"
+        },
+        {
+          "purchaseId": "M000104",
+          "productName": "OnePlus3",
+          "quantity": "1",
+          "buyerName": "abc4",
+          "price": "30000"
+        },
+        {
+          "purchaseId": "M000105",
+          "productName": "OnePlus3",
+          "quantity": "4",
+          "buyerName": "shan kul",
+          "price": 120000
+        },
+        {
+          "purchaseId": "M000106",
+          "productName": "OnePlus3",
+          "quantity": "4",
+          "buyerName": "Sh",
+          "price": 120000
+        },
+        {
+          "purchaseId": "M000107",
+          "productName": "OnePlus3",
+          "quantity": "1",
+          "buyerName": "shan_KUL",
+          "price": 30000
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "productId": "M001",
+      "productName": "iPhone 7",
+      "price": "60000",
+      "details": [
+        {
+          "purchaseId": "M001101",
+          "productName": "iPhone 7",
+          "quantity": "4",
+          "buyerName": "xyz1",
+          "price": "240000"
+        },
+        {
+          "purchaseId": "M001102",
+          "productName": "iPhone 7",
+          "quantity": "1",
+          "buyerName": "xyz2",
+          "price": "60000"
+        },
+        {
+          "purchaseId": "M001102",
+          "productName": "iPhone 7",
+          "quantity": "2",
+          "buyerName": "xyz3",
+          "price": "120000"
+        },
+        {
+          "purchaseId": "M001104",
+          "productName": "iPhone 7",
+          "quantity": "1",
+          "buyerName": "xyz4",
+          "price": "60000"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "productId": "M002",
+      "productName": "iPhone 7+",
+      "price": "80000",
+      "details": [
+        {
+          "purchaseId": "M002101",
+          "productName": "iPhone 7+",
+          "quantity": "4",
+          "buyerName": "abc1",
+          "price": "320000"
+        },
+        {
+          "purchaseId": "M002102",
+          "productName": "iPhone 7+",
+          "quantity": "1",
+          "buyerName": "abc2",
+          "price": "80000"
+        },
+        {
+          "purchaseId": "M002103",
+          "productName": "iPhone 7+",
+          "quantity": "2",
+          "buyerName": "abc3",
+          "price": "160000"
+        },
+        {
+          "purchaseId": "M002104",
+          "productName": "iPhone 7+",
+          "quantity": "1",
+          "buyerName": "abc4",
+          "price": "80000"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "productId": "M003",
+      "productName": "Pixel",
+      "price": "65000",
+      "details": [
+        {
+          "purchaseId": "M003101",
+          "productName": "Pixel",
+          "quantity": "1",
+          "buyerName": "abc1",
+          "price": "65000"
+        },
+        {
+          "purchaseId": "M003102",
+          "productName": "Pixel",
+          "quantity": "1",
+          "buyerName": "abc2",
+          "price": "65000"
+        },
+        {
+          "purchaseId": "M003103",
+          "productName": "Pixel",
+          "quantity": "2",
+          "buyerName": "abc3",
+          "price": "130000"
+        },
+        {
+          "purchaseId": "M003104",
+          "productName": "Pixel",
+          "quantity": "1",
+          "buyerName": "abc4",
+          "price": "65000"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "productId": "T001",
+      "productName": "iPad Air2",
+      "price": "50000",
+      "details": [
+        {
+          "purchaseId": "T001101",
+          "productName": "iPad Air2",
+          "quantity": "3",
+          "buyerName": "abc1",
+          "price": "150000"
+        },
+        {
+          "purchaseId": "T001102",
+          "productName": "iPad Air2",
+          "quantity": "1",
+          "buyerName": "abc2",
+          "price": "50000"
+        },
+        {
+          "purchaseId": "T001103",
+          "productName": "iPad Air2",
+          "quantity": "2",
+          "buyerName": "abc3",
+          "price": "100000"
+        },
+        {
+          "purchaseId": "T001104",
+          "productName": "iPad Air2",
+          "quantity": "1",
+          "buyerName": "abc4",
+          "price": "50000"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "productId": "T002",
+      "productName": "ipadMini 4",
+      "price": "32000",
+      "details": [
+        {
+          "purchaseId": "T002101",
+          "productName": "ipadMini 4",
+          "quantity": "4",
+          "buyerName": "abc1",
+          "price": "128000"
+        },
+        {
+          "purchaseId": "T002102",
+          "productName": "ipadMini 4",
+          "quantity": "1",
+          "buyerName": "abc2",
+          "price": "32000"
+        },
+        {
+          "purchaseId": "T002103",
+          "productName": "ipadMini 4",
+          "quantity": "2",
+          "buyerName": "abc3",
+          "price": "64000"
+        },
+        {
+          "purchaseId": "T002104",
+          "productName": "ipadMini 4",
+          "quantity": "1",
+          "buyerName": "abc4",
+          "price": "32000"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "productId": "L001",
+      "productName": "Macbook Pro",
+      "price": "110000",
+      "details": [
+        {
+          "purchaseId": "L001101",
+          "productName": "Macbook Pro",
+          "quantity": "4",
+          "buyerName": "abc1",
+          "price": "440000"
+        },
+        {
+          "purchaseId": "L001102",
+          "productName": "Macbook Pro",
+          "quantity": "1",
+          "buyerName": "abc2",
+          "price": "110000"
+        },
+        {
+          "purchaseId": "L001103",
+          "productName": "Macbook Pro",
+          "quantity": "2",
+          "buyerName": "abc3",
+          "price": "2200000"
+        },
+        {
+          "purchaseId": "L001104",
+          "productName": "Macbook Pro",
+          "quantity": "1",
+          "buyerName": "abc4",
+          "price": "110000"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "productId": "L002",
+      "productName": "Inspiron15R",
+      "price": "55000",
+      "details": [
+        {
+          "purchaseId": "L002101",
+          "productName": "Inspiron15R",
+          "quantity": "4",
+          "buyerName": "abc1",
+          "price": "220000"
+        },
+        {
+          "purchaseId": "L002102",
+          "productName": "Inspiron15R",
+          "quantity": "1",
+          "buyerName": "abc2",
+          "price": "55000"
+        },
+        {
+          "purchaseId": "L002103",
+          "productName": "Inspiron15R",
+          "quantity": "2",
+          "buyerName": "abc3",
+          "price": "110000"
+        },
+        {
+          "purchaseId": "L002104",
+          "productName": "Inspiron15R",
+          "quantity": "1",
+          "buyerName": "abc4",
+          "price": "55000"
+        }
+      ]
+    }
+  ],
+  "newpurchase": [
+    {
+      "purchaseId": "565vgvj",
+      "productName": "Pixel",
+      "quantity": "1",
+      "buyerName": "kjhkjn nhkjnl",
+      "id": 1
+    },
+    {
+      "purchaseId": "565vgvj",
+      "productName": "Pixel",
+      "quantity": "1",
+      "buyerName": "kjhkjn nhkjnl",
+      "id": 2
+    },
+    {
+      "purchaseId": "P00001",
+      "productName": "iPhone 7",
+      "quantity": "1",
+      "buyerName": "Shantanu",
+      "id": 3
+    }
+  ]
+}
