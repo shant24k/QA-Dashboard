@@ -29,26 +29,26 @@
                 </tbody>
             </table>
 
-            <h2>Purchase New Product</h2><hr>
+            <h2>Create New Product Id</h2><hr>
             <form class="form-horizontal" name="productForm" ng-submit="addNewProduct()" novalidate>
               <div class="form-group">
                 <label class="control-label col-sm-2" for="product-id">Product ID:</label>
                 <div class="col-sm-10 padding-top-7">
-                  <input type="text" id="product-id" ng-model="newProduct.productId"></input><span class="">{{newPurchase.purchaseId}}</span>
+                  <input type="text" id="product-id" class="form-control" ng-model="newProduct.productId"></input><span class="">{{newPurchase.purchaseId}}</span>
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="control-label col-sm-2" for="price">Price:</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="price" placeholder="Enter Price" ng-model="newProduct.productPrice" required>
+                  <input type="text" class="form-control" id="price" placeholder="Enter Price" ng-model="newProduct.price" required>
                 </div>
               </div>
 
 
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-default" ng-disabled="!newProduct.productId || !newProduct.productPrice ">Submit</button>
+                  <button type="submit" class="btn btn-default" ng-disabled="!newProduct.productId || !newProduct.price ">Submit</button>
                 </div>
               </div>
             </form>

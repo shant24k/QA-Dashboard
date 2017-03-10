@@ -36,6 +36,11 @@ var app = angular.module('myApp', ['controllers', 'ngRoute','ngResource', 'facto
                 //return $http.put(url,data);
                 return $resource(baseURL+"purchaseDetails/:id",null,  {'update':{method:'PUT' }});
             }
+            dataFactory.productData = function(data){
+                var baseURL = 'http://localhost:3000/';
+                return $http.post(baseURL+"recentPurchases",data);
+               // return $resource(baseURL+"recentPurchases/",{},  {'update':{method:'PUT', isArray: true }});
+            }
             return dataFactory;
         });
         var controllers = angular.module('controllers', ['factories']);
@@ -68,6 +73,7 @@ var app = angular.module('myApp', ['controllers', 'ngRoute','ngResource', 'facto
             console.log($routeParams.detailsID);
             $scope.newPurchase = {purchaseId:null,productName:null,quantity:null,buyerName:null};
             $scope.purchase={};
+            $scope.newProduct = {};
             $scope.whichDetails = $routeParams.detailsID;
             dataFactory.getData().then(function(response){
                                            $scope.purchase.recentpurchases = response.data.purchaseDetails;
@@ -119,19 +125,19 @@ var app = angular.module('myApp', ['controllers', 'ngRoute','ngResource', 'facto
                 $scope.newPurchase = {purchaseId:null,productName:null,quantity:null,buyerName:null};
             }
             $scope.addNewProduct = function(){
-                var productDetails = $scope.purchase.recentpurchases;
-                for(var i=0;i<=purchaseDetails.length-1;i++){
-                    if(purchaseDetails[i].productName == $scope.newPurchase.productName){
-                        purchaseDetails[i].details.push($scope.newPurchase)
-                        console.log(purchaseDetails[i].details);
-                        $scope.updateId = purchaseDetails[i].id;
-                    }
-                }
+                var productDetails = $scope.purchase.allpurchases;
+                var url = "#/recentpurchases/"+productDetails.length;
+                $scope.newProduct.details = url;
+                productDetails.push($scope.newProduct);
+                var newProductDetails = productDetails;
+                dataFactory.productData($scope.newProduct).then(function(response){
+                    console.log(response);
+                    $scope.newProduct = {productId:null,price:null,details:null};
+                }, function(error){
+                    console.log(error);
+                });
+                //dataFactory.productData().update({},newProductDetails);
 
-                var updateId = $scope.updateId;
-                var newdata = purchaseDetails[updateId-1];
-                dataFactory.postData().update({id:$scope.updateId},newdata);
-                $scope.newPurchase = {purchaseId:null,productName:null,quantity:null,buyerName:null};
             }
 
         }]);

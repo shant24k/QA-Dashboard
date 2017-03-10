@@ -122,42 +122,56 @@
     {
       "productId": "M000",
       "price": "30000",
-      "details": "#/recentpurchases/0"
+      "details": "#/recentpurchases/0",
+      "id": 1
     },
     {
       "productId": "M001",
       "price": "60000",
-      "details": "#/recentpurchases/1"
+      "details": "#/recentpurchases/1",
+      "id": 2
     },
     {
       "productId": "M002",
       "price": "80000",
-      "details": "#/recentpurchases/2"
+      "details": "#/recentpurchases/2",
+      "id": 3
     },
     {
       "productId": "M003",
       "price": "65000",
-      "details": "#/recentpurchases/3"
+      "details": "#/recentpurchases/3",
+      "id": 4
     },
     {
       "productId": "T001",
       "price": "50000",
-      "details": "#/recentpurchases/4"
+      "details": "#/recentpurchases/4",
+      "id": 5
     },
     {
       "productId": "T002",
       "price": "32000",
-      "details": "#/recentpurchases/5"
+      "details": "#/recentpurchases/5",
+      "id": 6
     },
     {
       "productId": "L001",
       "price": "110000",
-      "details": "#/recentpurchases/6"
+      "details": "#/recentpurchases/6",
+      "id": 7
     },
     {
       "productId": "L002",
       "price": "55000",
-      "details": "#/recentpurchases/7"
+      "details": "#/recentpurchases/7",
+      "id": 8
+    },
+    {
+      "productId": "M004",
+      "price": "40000",
+      "details": "#/recentpurchases/8",
+      "id": 9
     }
   ],
   "purchaseDetails": [
@@ -492,6 +506,12 @@
       "quantity": "1",
       "buyerName": "Shantanu",
       "id": 3
+    },
+    {
+      "productId": "M004",
+      "price": "40000",
+      "details": "#/recentpurchases/8",
+      "id": 4
     }
   ]
 }
