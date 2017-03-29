@@ -1,9 +1,6 @@
 var app = angular.module('myApp', ['controllers', 'ngRoute','ngResource', 'factories']);
         app.config(['$routeProvider', function ($routeProvider) {
-            $routeProvider.when('/pms/:box', {
-                controller: 'pmBox',
-                templateUrl: 'pmBox.html'
-            }).when('/summaryproducts', {
+            $routeProvider.when('/summaryproducts', {
                 controller: 'summary',
                 templateUrl: 'views/summaryproducts.html'
             }).when('/summarycategory', {
@@ -71,13 +68,16 @@ var app = angular.module('myApp', ['controllers', 'ngRoute','ngResource', 'facto
         }]);
         controllers.controller('purchaseDetails', ['$scope', '$routeParams','dataFactory', function ($scope, $routeParams, dataFactory) {
             console.log($routeParams.detailsID);
-            $scope.newPurchase = {purchaseId:null,productName:null,quantity:null,buyerName:null};
-            $scope.purchase={};
+                        $scope.purchase={};
             $scope.newProduct = {};
             $scope.whichDetails = $routeParams.detailsID;
-            dataFactory.getData().then(function(response){
+                        dataFactory.getData().then(function(response){
                                            $scope.purchase.recentpurchases = response.data.purchaseDetails;
                                            $scope.purchase.allpurchases = response.data.recentPurchases;
+                                           $scope.newPurchase = {purchaseId:null,productName:$scope.purchase.recentpurchases[$scope.whichDetails].details[0].productName,quantity:null,buyerName:null};
+                                            // Just to refresh price & id details initially
+                                            $scope.purchaseIdDetails();
+                                            $scope.purchasePriceDetails();
                                            }, function(e){
                                             console.log(e);
                                            });
@@ -122,7 +122,10 @@ var app = angular.module('myApp', ['controllers', 'ngRoute','ngResource', 'facto
                 var updateId = $scope.updateId;
                 var newdata = purchaseDetails[updateId-1];
                 dataFactory.postData().update({id:$scope.updateId},newdata);
-                $scope.newPurchase = {purchaseId:null,productName:null,quantity:null,buyerName:null};
+                $scope.newPurchase = {purchaseId:null,productName:$scope.purchase.recentpurchases[$scope.whichDetails].details[0].productName,quantity:null,buyerName:null};
+                // Just to refresh price & id details on submit
+                $scope.purchaseIdDetails();
+                $scope.purchasePriceDetails();
             }
             $scope.addNewProduct = function(){
                 var productDetails = $scope.purchase.allpurchases;

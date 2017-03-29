@@ -122,56 +122,72 @@
     {
       "productId": "M000",
       "price": "30000",
+      "productName": "OnePlus 3",
       "details": "#/recentpurchases/0",
       "id": 1
     },
     {
       "productId": "M001",
       "price": "60000",
+      "productName": "iPhone 7",
       "details": "#/recentpurchases/1",
       "id": 2
     },
     {
       "productId": "M002",
       "price": "80000",
+      "productName": "iPhone 7+",
       "details": "#/recentpurchases/2",
       "id": 3
     },
     {
       "productId": "M003",
       "price": "65000",
+      "productName": "Pixel",
       "details": "#/recentpurchases/3",
       "id": 4
     },
     {
       "productId": "T001",
       "price": "50000",
+      "productName": "iPad Air2",
       "details": "#/recentpurchases/4",
       "id": 5
     },
     {
       "productId": "T002",
       "price": "32000",
+      "productName": "ipadMini 4",
       "details": "#/recentpurchases/5",
       "id": 6
     },
     {
       "productId": "L001",
       "price": "110000",
+      "productName": "Macbook Pro",
       "details": "#/recentpurchases/6",
       "id": 7
     },
     {
       "productId": "L002",
       "price": "55000",
+      "productName": "Inspiron15R",
       "details": "#/recentpurchases/7",
       "id": 8
     },
     {
       "productId": "M004",
       "price": "40000",
+      "productName": "iPhone 6S",
       "details": "#/recentpurchases/8",
       "id": 9
+    },
+    {
+      "productId": "L003",
+      "productName": "Macbook Air",
+      "price": "75000",
+      "details": "#/recentpurchases/9",
+      "id": 10
     }
   ],
   "purchaseDetails": [
@@ -229,6 +245,20 @@
           "quantity": "1",
           "buyerName": "shan_KUL",
           "price": 30000
+        },
+        {
+          "purchaseId": "M000108",
+          "productName": "OnePlus3",
+          "quantity": "1",
+          "buyerName": "shantanu",
+          "price": 30000
+        },
+        {
+          "purchaseId": "M000109",
+          "productName": "OnePlus3",
+          "quantity": "3",
+          "buyerName": "xyz",
+          "price": 90000
         }
       ]
     },
@@ -409,6 +439,13 @@
           "quantity": "1",
           "buyerName": "abc4",
           "price": "32000"
+        },
+        {
+          "purchaseId": "T002105",
+          "productName": "ipadMini 4",
+          "quantity": "2",
+          "buyerName": "shantanu",
+          "price": 64000
         }
       ]
     },
