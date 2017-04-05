@@ -1,0 +1,321 @@
+{
+  "defectDetails": [
+    {
+      "id": 1,
+      "defectId": 10000,
+      "summary": "Test Connection",
+      "description": "Just for testing connection.",
+      "status": "New",
+      "severity": "1-Low",
+      "detectedBy": "shikha",
+      "detectedOn": "03/04/2017",
+      "assignedTo": "Arjun"
+    },
+    {
+      "id": 2,
+      "defectId": 10001,
+      "summary": "Change header of all pages",
+      "description": "Making all headers bold & increasing height of container",
+      "status": "Open",
+      "severity": "2-Medium",
+      "detectedBy": "Shikha",
+      "detectedOn": "03/01/2017",
+      "assignedTo": "Chintan"
+    },
+    {
+      "id": 3,
+      "defectId": 10002,
+      "summary": "Date field change in desktop",
+      "description": "Making changes in datepicker field with icon",
+      "status": "Open",
+      "severity": "2-Medium",
+      "detectedBy": "Shikha",
+      "detectedOn": "03/01/2017",
+      "assignedTo": "Chintan"
+    },
+    {
+      "id": 4,
+      "defectId": 10003,
+      "summary": "Content mismatch",
+      "description": "Content verfication for typing errors",
+      "status": "Open",
+      "severity": "3-High",
+      "detectedBy": "Shikha",
+      "detectedOn": "03/01/2017",
+      "assignedTo": "Arjun"
+    },
+    {
+      "id": 5,
+      "defectId": 10004,
+      "summary": "Change in generalized function",
+      "description": "Common change for listheight for all modules",
+      "status": "Open",
+      "severity": "4-Very High",
+      "detectedBy": "Shikha",
+      "detectedOn": "09/06/2016",
+      "assignedTo": "Surya"
+    },
+    {
+      "id": 6,
+      "defectId": 10005,
+      "summary": "Change Datepicker dates tabindex",
+      "description": "Making dates choosing through tabindex",
+      "status": "Open",
+      "severity": "3-High",
+      "detectedBy": "Sayali",
+      "detectedOn": "12/01/2016",
+      "assignedTo": "Surya"
+    },
+    {
+      "id": 7,
+      "defectId": 10006,
+      "summary": "Popup visibility on scroll",
+      "description": "Make popups disapper on scroll",
+      "status": "Open",
+      "severity": "2-Medium",
+      "detectedBy": "Sayali",
+      "detectedOn": "03/10/2016",
+      "assignedTo": "Argha"
+    }
+  ],
+  "defectCommentDetails": [
+    {
+      "id": 1,
+      "defectId": 10000,
+      "summary": "Test Connection",
+      "description": "Just for testing connection.",
+      "status": "New",
+      "severity": "1-Low",
+      "detectedBy": "shikha",
+      "detectedOn": "03/04/2017",
+      "assignedTo": "Arjun",
+      "comments": [
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Sayali",
+          "comment": "Make it cross compatible or mobile browsers1"
+        },
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Sayali",
+          "comment": "Issue in recent safari browser"
+        },
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Shikha",
+          "comment": "issue reproducible in ie11"
+        },
+        {
+          "commentOn": null,
+          "commentBy": "Arjun",
+          "comment": "Ready to retest for ie & safari"
+        },
+        {
+          "commentOn": "4/5/2017",
+          "commentBy": "Shikha",
+          "comment": "Fixed"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "defectId": 10001,
+      "summary": "Change header of all pages",
+      "description": "Making all headers bold & increasing height of container",
+      "status": "Open",
+      "severity": "2-Medium",
+      "detectedBy": "Shikha",
+      "detectedOn": "03/01/2017",
+      "assignedTo": "Chintan",
+      "comments": [
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Sayali",
+          "comment": "Make it cross compatible or mobile browsers2"
+        },
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Sayali",
+          "comment": "Issue in recent safari browser"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "defectId": 10002,
+      "summary": "Date field change in desktop",
+      "description": "Making changes in datepicker field with icon",
+      "status": "Open",
+      "severity": "2-Medium",
+      "detectedBy": "Shikha",
+      "detectedOn": "03/01/2017",
+      "assignedTo": "Chintan",
+      "comments": [
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Sayali",
+          "comment": "Make it cross compatible or mobile browsers3"
+        },
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Sayali",
+          "comment": "Issue in recent safari browser"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "defectId": 10003,
+      "summary": "Content mismatch",
+      "description": "Content verfication for typing errors",
+      "status": "Open",
+      "severity": "3-High",
+      "detectedBy": "Shikha",
+      "detectedOn": "03/01/2017",
+      "assignedTo": "Arjun",
+      "comments": [
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Sayali",
+          "comment": "Make it cross compatible or mobile browsers4"
+        },
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Sayali",
+          "comment": "Issue in recent safari browser"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "defectId": 10004,
+      "summary": "Change in generalized function",
+      "description": "Common change for listheight for all modules",
+      "status": "Open",
+      "severity": "4-Very High",
+      "detectedBy": "Shikha",
+      "detectedOn": "09/06/2016",
+      "assignedTo": "Surya",
+      "comments": [
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Sayali",
+          "comment": "Make it cross compatible or mobile browsers5"
+        },
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Sayali",
+          "comment": "Issue in recent safari browser"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "defectId": 10005,
+      "summary": "Change Datepicker dates tabindex",
+      "description": "Making dates choosing through tabindex",
+      "status": "Open",
+      "severity": "3-High",
+      "detectedBy": "Sayali",
+      "detectedOn": "12/01/2016",
+      "assignedTo": "Surya",
+      "comments": [
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Sayali",
+          "comment": "Make it cross compatible or mobile browsers6"
+        },
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Sayali",
+          "comment": "Issue in recent safari browser"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "defectId": 10006,
+      "summary": "Popup visibility on scroll",
+      "description": "Make popups disapper on scroll",
+      "status": "Open",
+      "severity": "2-Medium",
+      "detectedBy": "Sayali",
+      "detectedOn": "03/10/2016",
+      "assignedTo": "Argha",
+      "comments": [
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Sayali",
+          "comment": "Make it cross compatible or mobile browsers7"
+        },
+        {
+          "commentOn": "03/04/2017",
+          "commentBy": "Sayali",
+          "comment": "Issue in recent safari browser"
+        }
+      ]
+    },
+    {
+      "defectId": 10007,
+      "summary": "console err",
+      "assignedTo": "Arjun",
+      "detectedBy": "Sayali",
+      "description": null,
+      "detectedOn": "4/5/2017",
+      "comments": [
+        {
+          "commentOn": "4/5/2017",
+          "commentBy": "Arjun",
+          "comment": "Cleared for Chrome"
+        }
+      ],
+      "id": 8
+    },
+    {
+      "defectId": 10008,
+      "summary": "Safari console error logs",
+      "assignedTo": "Surya",
+      "detectedBy": "Sayali",
+      "description": null,
+      "detectedOn": "4/5/2017",
+      "comments": [
+        {
+          "commentOn": "4/5/2017",
+          "commentBy": "Surya",
+          "comment": "Fixed. all cleared"
+        }
+      ],
+      "id": 9
+    },
+    {
+      "defectId": 10010,
+      "summary": "Safari Smooth Scroll issue",
+      "status": "New",
+      "severity": "2-Medium",
+      "assignedTo": "Arjun",
+      "detectedBy": "Sayali",
+      "description": null,
+      "detectedOn": "4/5/2017",
+      "comments": [
+        {
+          "commentOn": "4/5/2017",
+          "commentBy": "Arjun",
+          "comment": "Fixed ready to retest"
+        }
+      ],
+      "id": 10
+    },
+    {
+      "defectId": 10009,
+      "summary": "abc",
+      "status": "Open",
+      "severity": "2-Medium",
+      "assignedTo": "qwe",
+      "detectedBy": "poi",
+      "description": null,
+      "detectedOn": "4/5/2017",
+      "comments": [],
+      "id": 11
+    }
+  ]
+}

@@ -1,25 +1,19 @@
 var app = angular.module('myApp', ['controllers', 'ngRoute','ngResource', 'factories']);
         app.config(['$routeProvider', function ($routeProvider) {
-            $routeProvider.when('/summaryproducts', {
-                controller: 'summary',
-                templateUrl: 'views/summaryproducts.html'
-            }).when('/summarycategory', {
-                controller: 'summary',
-                templateUrl: 'views/summarycategory.html'
-            }).when('/summarybrands', {
-                controller: 'summary',
-                templateUrl: 'views/summarybrands.html'
-            }).when('/recentpurchases', {
-                controller: 'purchaseDetails',
-                templateUrl: 'views/recentpurchases.html'
-            }).when('/purchasenew', {
-                controller: 'purchaseDetails',
-                templateUrl: 'views/purchaseForm.html'
-            }).when('/recentpurchases/:detailsID', {
-                controller: 'purchaseDetails',
-                templateUrl: 'views/purchasedetails.html'
+            $routeProvider.when('/summarydefects', {
+                controller: 'summaryDefectsCtrl',
+                templateUrl: 'views/summarydefects.html'
+            }).when('/recentdefects', {
+                controller: 'defectsDetailsCtrl',
+                templateUrl: 'views/recentdefects.html'
+            }).when('/createnew', {
+                controller: 'defectsDetailsCtrl',
+                templateUrl: 'views/createnew.html'
+            }).when('/recentdefects/:id', {
+                controller: 'defectsDetailsCtrl',
+                templateUrl: 'views/defectcommentdetails.html'
             }).otherwise({
-                redirectTo: '/summaryproducts'
+                redirectTo: '/summarydefects'
             });
         }]);
         var factories = angular.module('factories', []);
@@ -31,112 +25,65 @@ var app = angular.module('myApp', ['controllers', 'ngRoute','ngResource', 'facto
             dataFactory.postData = function(data){
                 var baseURL = 'http://localhost:3000/';
                 //return $http.put(url,data);
-                return $resource(baseURL+"purchaseDetails/:id",null,  {'update':{method:'PUT' }});
+                return $resource(baseURL+"defectCommentDetails/:id",null,  {'update':{method:'PUT' }});
             }
-            dataFactory.productData = function(data){
+            dataFactory.defectData = function(data){
                 var baseURL = 'http://localhost:3000/';
-                return $http.post(baseURL+"recentPurchases",data);
+                return $http.post(baseURL+"defectCommentDetails",data);
                // return $resource(baseURL+"recentPurchases/",{},  {'update':{method:'PUT', isArray: true }});
             }
             return dataFactory;
         });
         var controllers = angular.module('controllers', ['factories']);
-        controllers.controller('summary', ['$scope', '$routeParams','dataFactory', function ($scope, $routeParams, dataFactory) {
+        controllers.controller('summaryDefectsCtrl', ['$scope', '$routeParams','dataFactory', function ($scope, $routeParams, dataFactory) {
              $scope.summary={};
             dataFactory.getData().then(function(response){
-                                           $scope.summary.products = response.data.productDetails;
+                                           $scope.summary.defects = response.data.defectDetails;
 
-                                            $scope.summary.category = response.data.categoryDetails;
-                                            $scope.summary.brands = response.data.brandsDetails;
                                            }, function(e){
                                            console.log(e);
                                            });
 
 
         }]);
-        controllers.controller('purchases', ['$scope', '$routeParams','dataFactory', function ($scope, $routeParams,dataFactory) {
 
-            $scope.purchase={};
-            dataFactory.getData().then(function(response){
-                                           $scope.purchase.allpurchases = response.data.recentPurchases;
-
-                                           }, function(e){
-                                            console.log(e);
-                                           });
-
-
-        }]);
-        controllers.controller('purchaseDetails', ['$scope', '$routeParams','dataFactory', function ($scope, $routeParams, dataFactory) {
-            console.log($routeParams.detailsID);
-                        $scope.purchase={};
-            $scope.newProduct = {};
-            $scope.whichDetails = $routeParams.detailsID;
+        controllers.controller('defectsDetailsCtrl', ['$scope', '$routeParams','dataFactory', function ($scope, $routeParams, dataFactory) {
+            console.log($routeParams.id);
+                        $scope.defect = {};
+            $scope.newComment = {commentOn:null,commentBy:null,comment:null};
+            $scope.newDefect = {defectId:null,summary:null,status:null,severity:null,assignedTo:null,detectedBy:null,description:null,detectedOn:"",comments:[]};
+            $scope.whichDetails = parseInt($routeParams.id)-1;
                         dataFactory.getData().then(function(response){
-                                           $scope.purchase.recentpurchases = response.data.purchaseDetails;
-                                           $scope.purchase.allpurchases = response.data.recentPurchases;
-                                           $scope.newPurchase = {purchaseId:null,productName:$scope.purchase.recentpurchases[$scope.whichDetails].details[0].productName,quantity:null,buyerName:null};
-                                            // Just to refresh price & id details initially
-                                            $scope.purchaseIdDetails();
-                                            $scope.purchasePriceDetails();
+
+                                           $scope.defect.alldefects = response.data.defectCommentDetails;
+
                                            }, function(e){
                                             console.log(e);
                                            });
 
-            // To create price for total quantity of devices t be ordered
-            $scope.purchasePriceDetails = function(){
-                var purchaseDetails = $scope.purchase.recentpurchases;
-                for(var i=0;i<=purchaseDetails.length-1;i++){
-                    if(purchaseDetails[i].productName == $scope.newPurchase.productName){
-                        console.log(purchaseDetails[i].productId);
-                        if($scope.newPurchase.quantity){
-                            $scope.newPurchase.price = $scope.newPurchase.quantity * purchaseDetails[i].price;
-                            console.log($scope.newPurchase.price);
-                        }
-                    }
-                }
-            }
-            // To create purchase Id dynamically during filling form
-            $scope.purchaseIdDetails = function(){
-                var purchaseDetails = $scope.purchase.recentpurchases;
-                for(var i=0;i<=purchaseDetails.length-1;i++){
-                    if(purchaseDetails[i].productName == $scope.newPurchase.productName){
-                        var detailsLength = purchaseDetails[i].details.length;
-                        var lastPurchaseId = purchaseDetails[i].details[detailsLength-1].purchaseId;
-                        var newItem = parseInt(lastPurchaseId.substring(4))+1;
-                        var newPurchaseId = lastPurchaseId.substring(0,4)+newItem;
-                        $scope.newPurchase.purchaseId = newPurchaseId;
-                        console.log($scope.newPurchase.purchaseId);
-                    }
-                }
-            }
             $scope.submit = function(){
-                var purchaseDetails = $scope.purchase.recentpurchases;
-                for(var i=0;i<=purchaseDetails.length-1;i++){
-                    if(purchaseDetails[i].productName == $scope.newPurchase.productName){
-                        purchaseDetails[i].details.push($scope.newPurchase)
-                        console.log(purchaseDetails[i].details);
-                        $scope.updateId = purchaseDetails[i].id;
-                    }
-                }
+                $scope.currentDefect = parseInt($routeParams.id);
+                var defectDetails = $scope.defect.alldefects;
+                var todaysDate = new Date();
+                $scope.newComment.commentOn = todaysDate.toLocaleDateString();
+                defectDetails[$scope.currentDefect -1].comments.push($scope.newComment);
 
-                var updateId = $scope.updateId;
-                var newdata = purchaseDetails[updateId-1];
-                dataFactory.postData().update({id:$scope.updateId},newdata);
-                $scope.newPurchase = {purchaseId:null,productName:$scope.purchase.recentpurchases[$scope.whichDetails].details[0].productName,quantity:null,buyerName:null};
-                // Just to refresh price & id details on submit
-                $scope.purchaseIdDetails();
-                $scope.purchasePriceDetails();
+                //$scope.updateId = $scope.currentDefect-1;
+                var newdata = defectDetails[$scope.currentDefect-1];
+                dataFactory.postData().update({id:$scope.currentDefect},newdata);
+                $scope.newComment = {commentOn:null,commentBy:null,comment:null};
+
+
             }
-            $scope.addNewProduct = function(){
-                var productDetails = $scope.purchase.allpurchases;
-                var url = "#/recentpurchases/"+productDetails.length;
-                $scope.newProduct.details = url;
-                productDetails.push($scope.newProduct);
-                var newProductDetails = productDetails;
-                dataFactory.productData($scope.newProduct).then(function(response){
+            $scope.addNewDefect = function(){
+                //var allDefectDetails = $scope.defect.alldefects;
+                var currdate = new Date();
+                $scope.newDefect.detectedOn = currdate.toLocaleDateString();
+                //allDefectDetails.push($scope.newProduct);
+                $scope.defect.alldefects.push($scope.newDefect);
+                dataFactory.defectData($scope.newDefect).then(function(response){
                     console.log(response);
-                    $scope.newProduct = {productId:null,price:null,details:null};
-                }, function(error){
+                    $scope.newDefect = {defectId:null,summary:null,status:null,severity:null,assignedTo:null,detectedBy:null,description:null,detectedOn:"",comments:[]};                }, function(error){
                     console.log(error);
                 });
                 //dataFactory.productData().update({},newProductDetails);
