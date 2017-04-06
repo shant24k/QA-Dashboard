@@ -1,4 +1,4 @@
-# angdashboard
+# Typescript version of angdashboard
 
 Install json-server globally:
 
