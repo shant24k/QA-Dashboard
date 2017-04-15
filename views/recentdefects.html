@@ -10,6 +10,25 @@
         </div>
         <div class="col-sm-9">
             <h2>Recent Defects</h2>
+
+            <!--<h4>Search Defects</h4>
+            <div class='form-group'>
+                <div class='row'>
+                   <div class="right-inner-addon col-sm-3 ">
+                    <input type="search" ng-model='searchBy.defectId' class="form-control" placeholder="Defect ID">
+                   </div>
+                   <div class="right-inner-addon col-sm-3 ">
+                    <input type="search" ng-model='searchBy.summary' class="form-control" placeholder="Summary">
+                  </div>
+                   <div class="right-inner-addon col-sm-3 ">
+                    <input type="search" ng-model='searchBy.assignedTo' class="form-control" placeholder="Assigned to">
+                  </div>
+                  <div class="right-inner-addon col-sm-3 ">
+                    <input type="search" ng-model='searchBy.detectedBy' class="form-control" placeholder="Detected By">
+                  </div>
+                </div>
+            </div>-->
+
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -21,7 +40,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="defect in defect.alldefects">
+                   <tr>
+                       <td><input type="search" ng-model='searchBy.defectId' class="form-control" placeholder="Defect ID"></td>
+                       <td><input type="search" ng-model='searchBy.summary' class="form-control" placeholder="Summary"></td>
+                       <td><input type="search" ng-model='searchBy.assignedTo' class="form-control" placeholder="Assigned to"></td>
+                       <td><input type="search" ng-model='searchBy.detectedBy' class="form-control" placeholder="Detected By"></td>
+                   </tr>
+                    <tr ng-repeat="defect in defect.alldefects | filter:searchBy">
                         <td><a ng-href="#/recentdefects/{{defect.id}}">{{ defect.defectId }}</a></td>
                         <td>{{ defect.summary }}</td>
                         <td>{{ defect.assignedTo }}</td>
@@ -60,9 +85,6 @@
                   <input type="text" id="detected-by" class="form-control" ng-model="newDefect.detectedBy" required></input>
                 </div>
               </div>
-
-
-
 
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
