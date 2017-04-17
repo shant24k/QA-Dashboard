@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['controllers', 'ngRoute','ngResource', 'factories']);
+var app = angular.module('myApp', ['controllers', 'ngRoute','ngResource', 'factories', 'ngProgress']);
         app.config(['$routeProvider', function ($routeProvider) {
             $routeProvider.when('/summarydefects', {
                 controller: 'summaryDefectsCtrl',
@@ -34,12 +34,14 @@ var app = angular.module('myApp', ['controllers', 'ngRoute','ngResource', 'facto
             }
             return dataFactory;
         });
-        var controllers = angular.module('controllers', ['factories']);
-        controllers.controller('summaryDefectsCtrl', ['$scope', '$routeParams','dataFactory', function ($scope, $routeParams, dataFactory) {
+        var controllers = angular.module('controllers', ['factories','ngProgress']);
+        controllers.controller('summaryDefectsCtrl', ['$scope', '$routeParams','dataFactory','ngProgressFactory', function ($scope, $routeParams, dataFactory, ngProgressFactory) {
              $scope.summary={};
+             $scope.progressbar = ngProgressFactory.createInstance();
+             $scope.progressbar.start();
             dataFactory.getData().then(function(response){
                                            $scope.summary.defects = response.data.defectDetails;
-
+                                           $scope.progressbar.complete()
                                            }, function(e){
                                            console.log(e);
                                            });
